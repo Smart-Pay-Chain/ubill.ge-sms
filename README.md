@@ -1,8 +1,8 @@
-# @smart-pay-chain/ubill-sms-client
+# ubill-sms-client
 
 Node.js client for [uBill.ge](https://ubill.ge) SMS API. Send SMS messages, manage brand names, check delivery status, and monitor your account balance with ease.
 
-[![npm version](https://img.shields.io/npm/v/@smart-pay-chain/ubill-sms-client.svg)](https://www.npmjs.com/package/@smart-pay-chain/ubill-sms-client)
+[![npm version](https://img.shields.io/npm/v/ubill-sms-client.svg)](https://www.npmjs.com/package/ubill-sms-client)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -17,19 +17,19 @@ Node.js client for [uBill.ge](https://ubill.ge) SMS API. Send SMS messages, mana
 ## Installation
 
 ```bash
-npm install @smart-pay-chain/ubill-sms-client
+npm install ubill-sms-client
 ```
 
 Or using yarn:
 
 ```bash
-yarn add @smart-pay-chain/ubill-sms-client
+yarn add ubill-sms-client
 ```
 
 ## Quick Start
 
 ```typescript
-import { UBillSMSClient } from "@smart-pay-chain/ubill-sms-client";
+import { UBillSMSClient } from "ubill-sms-client";
 
 // Initialize the client
 const client = new UBillSMSClient({
@@ -232,7 +232,7 @@ if (balance.statusID === 0) {
 Here's a complete example demonstrating all features:
 
 ```typescript
-import { UBillSMSClient } from "@smart-pay-chain/ubill-sms-client";
+import { UBillSMSClient } from "ubill-sms-client";
 
 async function main() {
   // Initialize client
@@ -287,7 +287,7 @@ main();
 The client throws descriptive errors that you can catch and handle:
 
 ```typescript
-import { UBillSMSClient } from "@smart-pay-chain/ubill-sms-client";
+import { UBillSMSClient } from "ubill-sms-client";
 
 const client = new UBillSMSClient({
   apiKey: "your-api-key",
@@ -321,7 +321,7 @@ import {
   SendSMSResponse,
   DeliveryReportResponse,
   BrandName,
-} from "@smart-pay-chain/ubill-sms-client";
+} from "ubill-sms-client";
 
 const client: UBillSMSClient = new UBillSMSClient({
   apiKey: "your-api-key",
@@ -427,7 +427,7 @@ UBILL_API_KEY=your-api-key-here
 ```
 
 ```typescript
-import { UBillSMSClient } from "@smart-pay-chain/ubill-sms-client";
+import { UBillSMSClient } from "ubill-sms-client";
 
 const client = new UBillSMSClient({
   apiKey: process.env.UBILL_API_KEY!,

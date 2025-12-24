@@ -1,5 +1,5 @@
 {
-  "name": "@smart-pay-chain/ubill-sms-client",
+  "name": "ubill-sms-client",
   "version": "1.0.0",
   "description": "Node.js client for uBill.ge SMS API - Send SMS messages, manage brand names, check delivery status and account balance",
   "main": "dist/index.js",
