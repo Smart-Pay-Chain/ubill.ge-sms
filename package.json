@@ -1,7 +1,7 @@
 {
   "name": "ubill-sms-client",
-  "version": "1.0.0",
-  "description": "Node.js client for uBill.ge SMS API - Send SMS messages, manage brand names, check delivery status and account balance",
+  "version": "1.0.1",
+  "description": "Node.js client for uBill.ge SMS API - Send SMS messages, manage brand names, check delivery status and account balance. (non official)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -50,4 +50,3 @@
     "axios": "^1.6.2"
   }
 }
-
