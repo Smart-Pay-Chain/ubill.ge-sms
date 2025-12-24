@@ -49,5 +49,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Focus on JSON as the standard for modern integrations
 - Added Georgian mobile number validation for data quality
 
-[1.0.0]: https://github.com/ubillge/sms-client/releases/tag/v1.0.0
+[1.0.0]: https://github.com/Smart-Pay-Chain/ubill.ge-sms/releases/tag/v1.0.0
 

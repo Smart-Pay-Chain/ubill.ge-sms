@@ -1,7 +1,7 @@
 {
-  "name": "@ubillge/sms-client",
+  "name": "@smart-pay-chain/ubill-sms-client",
   "version": "1.0.0",
-  "description": "Official Node.js client for uBill.ge SMS API - Send SMS messages, manage brand names, check delivery status and account balance",
+  "description": "Node.js client for uBill.ge SMS API - Send SMS messages, manage brand names, check delivery status and account balance",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -18,18 +18,19 @@
     "messaging",
     "api-client",
     "notifications",
-    "ubill.ge"
+    "ubill.ge",
+    "smart-pay-chain"
   ],
-  "author": "uBill.ge",
+  "author": "Smart Pay Chain",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ubillge/sms-client.git"
+    "url": "git+https://github.com/Smart-Pay-Chain/ubill.ge-sms.git"
   },
   "bugs": {
-    "url": "https://github.com/ubillge/sms-client/issues"
+    "url": "https://github.com/Smart-Pay-Chain/ubill.ge-sms/issues"
   },
-  "homepage": "https://github.com/ubillge/sms-client#readme",
+  "homepage": "https://github.com/Smart-Pay-Chain/ubill.ge-sms#readme",
   "files": [
     "dist",
     "README.md",

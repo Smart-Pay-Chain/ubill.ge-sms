@@ -1,8 +1,8 @@
-# @ubillge/sms-client
+# @smart-pay-chain/ubill-sms-client
 
-Official Node.js client for [uBill.ge](https://ubill.ge) SMS API. Send SMS messages, manage brand names, check delivery status, and monitor your account balance with ease.
+Node.js client for [uBill.ge](https://ubill.ge) SMS API. Send SMS messages, manage brand names, check delivery status, and monitor your account balance with ease.
 
-[![npm version](https://img.shields.io/npm/v/@ubillge/sms-client.svg)](https://www.npmjs.com/package/@ubillge/sms-client)
+[![npm version](https://img.shields.io/npm/v/@smart-pay-chain/ubill-sms-client.svg)](https://www.npmjs.com/package/@smart-pay-chain/ubill-sms-client)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -17,19 +17,19 @@ Official Node.js client for [uBill.ge](https://ubill.ge) SMS API. Send SMS messa
 ## Installation
 
 ```bash
-npm install @ubillge/sms-client
+npm install @smart-pay-chain/ubill-sms-client
 ```
 
 Or using yarn:
 
 ```bash
-yarn add @ubillge/sms-client
+yarn add @smart-pay-chain/ubill-sms-client
 ```
 
 ## Quick Start
 
 ```typescript
-import { UBillSMSClient } from "@ubillge/sms-client";
+import { UBillSMSClient } from "@smart-pay-chain/ubill-sms-client";
 
 // Initialize the client
 const client = new UBillSMSClient({
@@ -232,7 +232,7 @@ if (balance.statusID === 0) {
 Here's a complete example demonstrating all features:
 
 ```typescript
-import { UBillSMSClient } from "@ubillge/sms-client";
+import { UBillSMSClient } from "@smart-pay-chain/ubill-sms-client";
 
 async function main() {
   // Initialize client
@@ -287,7 +287,7 @@ main();
 The client throws descriptive errors that you can catch and handle:
 
 ```typescript
-import { UBillSMSClient } from "@ubillge/sms-client";
+import { UBillSMSClient } from "@smart-pay-chain/ubill-sms-client";
 
 const client = new UBillSMSClient({
   apiKey: "your-api-key",
@@ -321,7 +321,7 @@ import {
   SendSMSResponse,
   DeliveryReportResponse,
   BrandName,
-} from "@ubillge/sms-client";
+} from "@smart-pay-chain/ubill-sms-client";
 
 const client: UBillSMSClient = new UBillSMSClient({
   apiKey: "your-api-key",
@@ -427,7 +427,7 @@ UBILL_API_KEY=your-api-key-here
 ```
 
 ```typescript
-import { UBillSMSClient } from "@ubillge/sms-client";
+import { UBillSMSClient } from "@smart-pay-chain/ubill-sms-client";
 
 const client = new UBillSMSClient({
   apiKey: process.env.UBILL_API_KEY!,
@@ -459,7 +459,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For issues, questions, or contributions:
 
-- GitHub Issues: [https://github.com/ubillge/sms-client/issues](https://github.com/ubillge/sms-client/issues)
+- GitHub Issues: [https://github.com/Smart-Pay-Chain/ubill.ge-sms/issues](https://github.com/Smart-Pay-Chain/ubill.ge-sms/issues)
 - Email: support@ubill.ge
 
 ## Changelog
@@ -473,4 +473,4 @@ For issues, questions, or contributions:
 
 ---
 
-Made with ❤️ by [uBill.ge](https://ubill.ge)
+Made with ❤️ by [Smart Pay Chain](https://github.com/Smart-Pay-Chain)
