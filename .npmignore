@@ -1,0 +1,30 @@
+# Source files (we only publish dist/)
+src/
+
+# Config files
+tsconfig.json
+.gitignore
+
+# Development files
+examples/
+tests/
+*.test.ts
+*.spec.ts
+
+# Documentation sources
+docs/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
