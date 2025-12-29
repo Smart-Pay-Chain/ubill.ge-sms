@@ -223,7 +223,7 @@ Get your current SMS balance.
 const balance = await client.getBalance();
 
 if (balance.statusID === 0) {
-  console.log(`Remaining SMS: ${balance.balance}`);
+  console.log(`Remaining SMS: ${balance.sms}`);
 }
 ```
 
@@ -243,7 +243,7 @@ async function main() {
   try {
     // 1. Check balance
     const balance = await client.getBalance();
-    console.log(`Current balance: ${balance.balance} SMS`);
+    console.log(`Current balance: ${balance.sms} SMS`);
 
     // 2. Get brand names
     const brands = await client.getBrandNames();

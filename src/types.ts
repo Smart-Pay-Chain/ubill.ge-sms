@@ -109,8 +109,8 @@ export interface DeliveryReportResponse {
 export interface BalanceResponse {
   /** Status ID (0 = success) */
   statusID: number;
-  /** Remaining SMS balance */
-  balance?: number;
+  /** Remaining SMS count */
+  sms?: number;
   /** Response message (if error) */
   message?: string;
 }

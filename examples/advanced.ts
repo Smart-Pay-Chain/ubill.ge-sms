@@ -23,7 +23,7 @@ async function advancedExample() {
     const balance = await client.getBalance();
     
     if (balance.statusID === 0) {
-      console.log(`✅ Current balance: ${balance.balance} SMS\n`);
+      console.log(`✅ Current balance: ${balance.sms} SMS\n`);
       
       if ((balance.balance || 0) < 10) {
         console.warn('⚠️  Low balance warning! Please top up your account.\n');

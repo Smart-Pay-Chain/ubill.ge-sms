@@ -278,12 +278,12 @@ export class UBillSMSClient {
   /**
    * Get SMS balance for your account
    *
-   * @returns Current SMS balance
+   * @returns Current SMS count
    *
    * @example
    * ```typescript
    * const balance = await client.getBalance();
-   * console.log(`Remaining SMS: ${balance.balance}`);
+   * console.log(`Remaining SMS: ${balance.sms}`);
    * ```
    */
   async getBalance(): Promise<BalanceResponse> {
