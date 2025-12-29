@@ -9,10 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - **CRITICAL**: Fixed `createBrandName` HTTP method from PUT to POST to match uBill API specification
-- Updated tests to reflect the correct HTTP method
+- **CRITICAL**: Fixed `getBalance()` response field from `balance` to `sms` to match uBill API specification
+- Updated tests, documentation, and examples to reflect the correct field names
 
 ### Verified
-- All brand name endpoints verified against official [uBill API documentation](https://documenter.getpostman.com/view/13830965/TVmV6ZWT)
+- All SMS API endpoints verified against official [uBill API documentation](https://documenter.getpostman.com/view/13830965/TVmV6ZWT)
 - All 48 tests passing
 
 ## [1.0.0] - 2025-12-25

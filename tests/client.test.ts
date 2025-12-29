@@ -501,7 +501,7 @@ describe('UBillSMSClient', () => {
       const mockResponse = {
         data: {
           statusID: 0,
-          balance: 1000
+          sms: 1000
         }
       };
 
@@ -513,14 +513,14 @@ describe('UBillSMSClient', () => {
       const result = await client.getBalance();
 
       expect(result.statusID).toBe(0);
-      expect(result.balance).toBe(1000);
+      expect(result.sms).toBe(1000);
     });
 
     it('should handle zero balance', async () => {
       const mockResponse = {
         data: {
           statusID: 0,
-          balance: 0
+          sms: 0
         }
       };
 
@@ -532,7 +532,7 @@ describe('UBillSMSClient', () => {
       const result = await client.getBalance();
 
       expect(result.statusID).toBe(0);
-      expect(result.balance).toBe(0);
+      expect(result.sms).toBe(0);
     });
   });
 

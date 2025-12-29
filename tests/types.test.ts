@@ -163,9 +163,9 @@ describe("Type Definitions", () => {
     it("should accept BalanceResponse", () => {
       const response: BalanceResponse = {
         statusID: 0,
-        balance: 1000,
+        sms: 1000,
       };
-      expect(response.balance).toBe(1000);
+      expect(response.sms).toBe(1000);
     });
   });
 
@@ -178,12 +178,12 @@ describe("Type Definitions", () => {
       expect(response.brandID).toBeUndefined();
     });
 
-    it("should accept balance response without balance on error", () => {
+    it("should accept balance response without sms count on error", () => {
       const response: BalanceResponse = {
         statusID: 99,
         message: "Error occurred",
       };
-      expect(response.balance).toBeUndefined();
+      expect(response.sms).toBeUndefined();
     });
   });
 });
