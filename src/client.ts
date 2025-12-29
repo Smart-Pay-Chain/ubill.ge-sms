@@ -78,18 +78,18 @@ export class UBillSMSClient {
     try {
       // Validate brand name format
       if (!brandName || brandName.length < 2) {
-        throw new Error('Brand name must be at least 2 characters long');
+        throw new Error("Brand name must be at least 2 characters long");
       }
-      
+
       if (brandName.length > 11) {
-        throw new Error('Brand name must be maximum 11 characters long');
+        throw new Error("Brand name must be maximum 11 characters long");
       }
-      
+
       // Allowed: a-z, A-Z, 0-9, period (.), hyphen (-), space
       if (!/^[a-zA-Z0-9.\- ]+$/.test(brandName)) {
         throw new Error(
-          'Brand name contains invalid characters. ' +
-          'Allowed: letters (a-z, A-Z), numbers (0-9), period (.), hyphen (-), and space'
+          "Brand name contains invalid characters. " +
+            "Allowed: letters (a-z, A-Z), numbers (0-9), period (.), hyphen (-), and space"
         );
       }
 
