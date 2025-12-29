@@ -75,7 +75,7 @@ export class UBillSMSClient {
    */
   async createBrandName(brandName: string): Promise<BrandNameCreateResponse> {
     try {
-      const response = await this.axiosInstance.put("/sms/brandNameCreate", {
+      const response = await this.axiosInstance.post("/sms/brandNameCreate", {
         brandName,
       });
       return response.data;

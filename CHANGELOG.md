@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2025-12-29
+
+### Fixed
+- **CRITICAL**: Fixed `createBrandName` HTTP method from PUT to POST to match uBill API specification
+- Updated tests to reflect the correct HTTP method
+
+### Verified
+- All brand name endpoints verified against official [uBill API documentation](https://documenter.getpostman.com/view/13830965/TVmV6ZWT)
+- All 48 tests passing
+
 ## [1.0.0] - 2025-12-25
 
 ### Added

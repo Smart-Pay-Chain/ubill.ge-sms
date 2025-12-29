@@ -52,7 +52,7 @@ describe('UBillSMSClient', () => {
       };
 
       mockedAxios.create = jest.fn().mockReturnValue({
-        put: jest.fn().mockResolvedValue(mockResponse)
+        post: jest.fn().mockResolvedValue(mockResponse)
       } as any);
 
       client = new UBillSMSClient({ apiKey: mockApiKey });
@@ -72,7 +72,7 @@ describe('UBillSMSClient', () => {
       };
 
       mockedAxios.create = jest.fn().mockReturnValue({
-        put: jest.fn().mockResolvedValue(mockResponse)
+        post: jest.fn().mockResolvedValue(mockResponse)
       } as any);
 
       client = new UBillSMSClient({ apiKey: mockApiKey });
@@ -84,7 +84,7 @@ describe('UBillSMSClient', () => {
 
     it('should handle network error', async () => {
       mockedAxios.create = jest.fn().mockReturnValue({
-        put: jest.fn().mockRejectedValue(new Error('Network Error'))
+        post: jest.fn().mockRejectedValue(new Error('Network Error'))
       } as any);
 
       client = new UBillSMSClient({ apiKey: mockApiKey });
