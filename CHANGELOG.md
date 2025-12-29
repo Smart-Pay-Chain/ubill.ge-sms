@@ -25,8 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhanced API error code documentation
 
 ### Tests
-- Added 8 new tests for brand name validation
-- All 56 tests passing
+- Added 7 new tests for brand name validation
+- All 55 tests passing
 
 ### Verified
 - All SMS API endpoints verified against official [uBill API documentation](https://documenter.getpostman.com/view/13830965/TVmV6ZWT)
