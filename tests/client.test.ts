@@ -76,7 +76,7 @@ describe('UBillSMSClient', () => {
       } as any);
 
       client = new UBillSMSClient({ apiKey: mockApiKey });
-      const result = await client.createBrandName('ExistingBrand');
+      const result = await client.createBrandName('Existing');
 
       expect(result.statusID).toBe(40);
       expect(result.message).toBe('brandName has already been added');
