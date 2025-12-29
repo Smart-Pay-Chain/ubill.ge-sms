@@ -74,6 +74,15 @@ const client = new UBillSMSClient({
 
 Create a new brand name (sender ID) for your SMS messages. Brand names must be 2-11 characters and require approval before use.
 
+**Validation Rules:**
+- **Length:** Minimum 2 characters, maximum 11 characters
+- **Allowed characters:** 
+  - Letters: `a-z`, `A-Z`
+  - Numbers: `0-9`
+  - Period: `.`
+  - Hyphen: `-`
+  - Space: ` `
+
 ```typescript
 const response = await client.createBrandName("MyBrand");
 
@@ -83,6 +92,20 @@ if (response.statusID === 0) {
   console.error(`Error: ${response.message}`);
 }
 ```
+
+**Valid Examples:**
+- `MyBrand`
+- `Test-Co`
+- `Test.Co`
+- `My Brand`
+- `Brand123`
+
+**Invalid Examples:**
+- `A` (too short)
+- `ThisIsTooLong` (more than 11 characters)
+- `Test@Brand` (@ not allowed)
+- `Test_Brand` (underscore not allowed)
+- `Test#Brand` (# not allowed)
 
 **Error Codes:**
 

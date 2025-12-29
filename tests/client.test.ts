@@ -90,6 +90,90 @@ describe('UBillSMSClient', () => {
       client = new UBillSMSClient({ apiKey: mockApiKey });
       await expect(client.createBrandName('Test')).rejects.toThrow();
     });
+
+    it('should validate minimum brand name length', async () => {
+      await expect(client.createBrandName('A')).rejects.toThrow(
+        'Brand name must be at least 2 characters long'
+      );
+    });
+
+    it('should validate maximum brand name length', async () => {
+      await expect(client.createBrandName('ThisIsWayTooLong')).rejects.toThrow(
+        'Brand name must be maximum 11 characters long'
+      );
+    });
+
+    it('should validate brand name with empty string', async () => {
+      await expect(client.createBrandName('')).rejects.toThrow(
+        'Brand name must be at least 2 characters long'
+      );
+    });
+
+    it('should accept valid brand name with period', async () => {
+      const mockResponse = {
+        data: {
+          statusID: 0,
+          brandID: 124,
+          message: 'BrandName Created'
+        }
+      };
+
+      mockedAxios.create = jest.fn().mockReturnValue({
+        post: jest.fn().mockResolvedValue(mockResponse)
+      } as any);
+
+      client = new UBillSMSClient({ apiKey: mockApiKey });
+      const result = await client.createBrandName('Test.Co');
+      expect(result.statusID).toBe(0);
+    });
+
+    it('should accept valid brand name with hyphen', async () => {
+      const mockResponse = {
+        data: {
+          statusID: 0,
+          brandID: 125,
+          message: 'BrandName Created'
+        }
+      };
+
+      mockedAxios.create = jest.fn().mockReturnValue({
+        post: jest.fn().mockResolvedValue(mockResponse)
+      } as any);
+
+      client = new UBillSMSClient({ apiKey: mockApiKey });
+      const result = await client.createBrandName('Test-Co');
+      expect(result.statusID).toBe(0);
+    });
+
+    it('should accept valid brand name with space', async () => {
+      const mockResponse = {
+        data: {
+          statusID: 0,
+          brandID: 126,
+          message: 'BrandName Created'
+        }
+      };
+
+      mockedAxios.create = jest.fn().mockReturnValue({
+        post: jest.fn().mockResolvedValue(mockResponse)
+      } as any);
+
+      client = new UBillSMSClient({ apiKey: mockApiKey });
+      const result = await client.createBrandName('Test Co');
+      expect(result.statusID).toBe(0);
+    });
+
+    it('should reject brand name with invalid characters', async () => {
+      await expect(client.createBrandName('Test@Brand')).rejects.toThrow(
+        'Brand name contains invalid characters'
+      );
+      await expect(client.createBrandName('Test#Brand')).rejects.toThrow(
+        'Brand name contains invalid characters'
+      );
+      await expect(client.createBrandName('Test_Brand')).rejects.toThrow(
+        'Brand name contains invalid characters'
+      );
+    });
   });
 
   describe('getBrandNames', () => {

@@ -63,6 +63,7 @@ export class UBillSMSClient {
    * Create a new brand name
    *
    * Brand names must be 2-11 characters and approved before use.
+   * Allowed characters: a-z, A-Z, 0-9, period (.), hyphen (-), space
    *
    * @param brandName - The brand name to create (2-11 characters)
    * @returns Response containing the created brand ID
@@ -75,6 +76,23 @@ export class UBillSMSClient {
    */
   async createBrandName(brandName: string): Promise<BrandNameCreateResponse> {
     try {
+      // Validate brand name format
+      if (!brandName || brandName.length < 2) {
+        throw new Error('Brand name must be at least 2 characters long');
+      }
+      
+      if (brandName.length > 11) {
+        throw new Error('Brand name must be maximum 11 characters long');
+      }
+      
+      // Allowed: a-z, A-Z, 0-9, period (.), hyphen (-), space
+      if (!/^[a-zA-Z0-9.\- ]+$/.test(brandName)) {
+        throw new Error(
+          'Brand name contains invalid characters. ' +
+          'Allowed: letters (a-z, A-Z), numbers (0-9), period (.), hyphen (-), and space'
+        );
+      }
+
       const response = await this.axiosInstance.post("/sms/brandNameCreate", {
         brandName,
       });
