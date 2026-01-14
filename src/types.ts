@@ -89,6 +89,10 @@ export interface DeliveryStatus {
    * 4 = Error
    */
   statusID: '0' | '1' | '2' | '3' | '4';
+  /** Status text description */
+  status?: string;
+  /** Delivery timestamp (if available) */
+  deliveredAt?: string;
 }
 
 /**
@@ -111,6 +115,8 @@ export interface BalanceResponse {
   statusID: number;
   /** Remaining SMS count */
   sms?: number;
+  /** Account balance (alternative field name) */
+  balance?: number;
   /** Response message (if error) */
   message?: string;
 }

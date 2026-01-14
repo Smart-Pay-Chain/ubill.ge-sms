@@ -266,7 +266,7 @@ export class UBillSMSClient {
    *
    * Status codes:
    * - 0: Sent
-   * - 1: Received
+   * - 1: Received (Delivered)
    * - 2: Not delivered
    * - 3: Awaiting status
    * - 4: Error
@@ -277,9 +277,14 @@ export class UBillSMSClient {
    * @example
    * ```typescript
    * const report = await client.getDeliveryReport(117345);
-   * report.result?.forEach(status => {
-   *   console.log(`${status.number}: ${status.statusID}`);
-   * });
+   * if (report.statusID === 0 && report.result) {
+   *   report.result.forEach(status => {
+   *     console.log(`${status.number}: Status ${status.statusID}`);
+   *     if (status.statusID === '1') {
+   *       console.log(`Delivered at: ${status.deliveredAt}`);
+   *     }
+   *   });
+   * }
    * ```
    */
   async getDeliveryReport(
@@ -296,12 +301,18 @@ export class UBillSMSClient {
   /**
    * Get SMS balance for your account
    *
-   * @returns Current SMS count
+   * Returns the current SMS balance or remaining SMS count for your account.
+   *
+   * @returns Current SMS balance/count
    *
    * @example
    * ```typescript
-   * const balance = await client.getBalance();
-   * console.log(`Remaining SMS: ${balance.sms}`);
+   * const balanceInfo = await client.getBalance();
+   * if (balanceInfo.statusID === 0) {
+   *   // API may return 'sms' or 'balance' field depending on account type
+   *   const remaining = balanceInfo.sms || balanceInfo.balance || 0;
+   *   console.log(`Remaining SMS: ${remaining}`);
+   * }
    * ```
    */
   async getBalance(): Promise<BalanceResponse> {
